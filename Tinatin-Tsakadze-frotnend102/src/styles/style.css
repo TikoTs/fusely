@@ -5,6 +5,7 @@
 body {
     overflow-x: hidden;
 }
+
 img{
     width: 100%;
 }
@@ -15,6 +16,7 @@ img{
 
 .row{
     display: flex;
+    flex-wrap: wrap;
 }
 .mt-76{
     margin-top: 76px;
@@ -27,9 +29,14 @@ img{
 }
 .nav_link{
     list-style: none;
-    display: flex;
+    display: flex !important; 
     gap: 36px;
 }
+.ToggleNav {
+    width: 20px;
+    display: none;
+}
+
 .secondary_btn{
     width: 102px;
     height: 51px;
@@ -97,14 +104,24 @@ img{
     border: none;
     background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(197,194,255,1) 50%);
 }
-.container-chooseyourplan {
-    margin-top: 150px;
-    height: 700px;
+
+
+#mt-76-chooseyourplan{
+    height: 640px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
-.container-chooseyourplan h1 {
+#container-chooseyourplan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container-chooseyourplan {
+    height: 100%;
+}
+#mt-76-chooseyourplan h1 {
     font-family: 'Playfair Display';
     font-style: normal;
     font-weight: 700;
@@ -112,13 +129,13 @@ img{
     letter-spacing: -1px;
 }
 .plans {
+    position: relative;
+    margin-top: 50px;
     width: 80%;
     height: 90%;
-    margin-top: 55px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 55px;
 }
 .plans * {
     width: 31%;
@@ -302,10 +319,9 @@ img{
     width: 135px;
 }
 
-.letstalk {
+#letstalk-container {
+    position: relative;
     height: 380px;
-    width: 60%;
-    margin-left: 20%;
     background: #2F2E41;
     border-radius: 2px;
     margin-top: 100px;
@@ -314,7 +330,7 @@ img{
     align-items: center;
     justify-content: space-between;
 }
-.letstalk :nth-child(1){
+#letstalk-container :nth-child(1){
     margin-left: 10%;
     font-family: 'Playfair Display';
     font-style: normal;
@@ -324,7 +340,7 @@ img{
     color: #FFFFFF;
     width: 290px;
 }
-.letstalk :nth-child(2){
+#letstalk-container :nth-child(2){
     margin-right: 10%;
     width: 166px;
     height: 49px;
@@ -338,38 +354,46 @@ img{
     text-align: center;
     color: #FFFFFF;
 }
-.rounddiv {
-    position: absolute;
-    right: -110px;
-    transform: translateY(-210px);
-    width: 241px;
-    height: 235px;
-    border-radius: 260px;
-    background-color: rgba(112, 0, 255, 1);
-    z-index: 15;
-}
 footer {
     position: relative;
     background: rgba(236, 235, 255, 0.6);
-    height: 540px;
+    margin: 0 auto;
+    height: 570px;
+    width: 1520px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 footer .footernavs {
+    height: 300px;
     position: relative;
-    top: 26%;
-    height: 43%;
-    width: 63%;
-    left: 20%;
+    width: 94%;
+    margin-left: 16%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0;
+    margin-top: 130px;
 }
 .footernavs nav {
-    height: 70%;
-    width: 13%;
+    height: 240px;
+    width: 33%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
+}
+#nav3 {
+    position: relative;
+    height: 105px;
+    bottom: 70px;
+}
+#nav4 {
+    position: relative;
+    height: 75px;
+    bottom: 90px;
 }
 .footernavs nav p {
     font-family: 'Open Sans';
@@ -390,19 +414,19 @@ footer .footernavs {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transform: translateX(-8px);
+    width: 110px;
 }
 .socmedias img{
     width: 32px;
     height: 35px;
-    margin: 0;
+    margin: 0; 
 }
+
 .cpbottom {
     width: 90%;
-    position: relative;
-    top: 35%;
     height: 50px;
-    left: 5%;
+    margin-left: 5%;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -415,3 +439,148 @@ footer .footernavs {
     line-height: 16px;
     color: #9893A3;
 }
+
+
+
+
+
+
+@media only screen and (max-width: 1366px) { 
+    .container {
+      width: 90%;
+  
+    }
+    footer {
+        width: 100%;
+    }
+    .banner_content_wrapper{
+      width: 45%;
+  
+    }
+    .banner_img_wrapper {
+      width: 50%;
+    }
+    .clients{
+      gap: 20px;
+    }
+  
+  }
+  
+  
+  @media only screen and (max-width: 992px) { 
+  
+    .container {
+      width: 90%;
+    }
+    .nav_link li{
+        display: none;
+    }
+    .ToggleNav {
+        display: block;
+        cursor: pointer;
+    }
+    .btn_container {
+        display: none
+    }
+    .desktop {
+      display: none !important;
+    }
+    #mt-76-chooseyourplan {
+        align-items: flex-start;
+    }
+    .chooseyourplanh {
+        margin-left: 20px;
+    }
+    .plans {
+        margin-top: 1050px;
+        width: 100%;
+        height: 1600px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .plan1, .plan2, .plan3 {
+        transform: translateX(-15px);
+        width: 105%;
+        height: 32%;
+        margin: 0;
+    }
+    #letstalk-container {
+        margin-top: 1200px;
+    }
+  }
+  
+  
+  
+  
+  @media only screen and (max-width: 600px) {   
+    .desktop {
+      display: none !important;
+    }
+  
+    .clients{
+      gap: 30px;
+    }
+  
+    .container {
+      width: 90%;
+    }
+    .banner_content_wrapper h1{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 46px;
+      line-height: 40px;
+      letter-spacing: -1px;
+      color: #2F2E41;
+    }
+  
+    .reverse{
+      flex-direction: column-reverse;
+    }
+  
+    .banner_content_wrapper{
+      width: 100%;
+  
+    }
+    .banner_img_wrapper {
+      width: 100%;
+    }
+    #letstalk-container {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #letstalk-container :nth-child(1) {
+        font-size: 30px;
+        line-height: 32px;
+        text-align: center;
+    }
+    #letstalk-container :nth-child(2) {
+        margin-left: 80px;
+    }
+    footer {
+        height: 600px;
+    }
+    footer .footernavs {
+        margin-top: -350px;
+        position: relative;
+        height: 25%;
+        flex-wrap: wrap;
+        width: 500px;
+        top: 40px;
+    }
+    #nav3 {
+        bottom: -235px;
+        right: 335px;
+    }
+    #nav4 {
+        bottom: -61px;
+        left: 165px;
+    }
+    .cpbottom {
+        position: relative;
+        margin: 0;
+        top: 350px;
+    }
+  }
+  
